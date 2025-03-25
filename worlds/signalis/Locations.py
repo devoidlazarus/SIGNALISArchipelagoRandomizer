@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple
 from BaseClasses import Location
 
 class SignalisLocation(Location):
