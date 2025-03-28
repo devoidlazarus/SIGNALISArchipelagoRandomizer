@@ -57,15 +57,15 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("Protektor Key", self.player),
             lambda state: state.has("Receptionist Key", self.player))
         set_rule(self.multiworld.get_location("Pistol", self.player),
-            lambda state: state.has("Protektor Key", self.player))
+            lambda state: state.has_all(["Protektor Key", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("Aperture Card", self.player),
-            lambda state: state.has("Protektor Key", self.player))
+            lambda state: state.has_all(["Protektor Key", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("Classroom Key (Installation AEON)", self.player),
-            lambda state: state.has("Aperture Card", self.player))
+            lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Installation AEON - Aula)", self.player),
-            lambda state: state.has("Aperture Card", self.player))
+            lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Installation AEON - Aula)", self.player),
-            lambda state: state.has("Aperture Card", self.player))
+            lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
         
        # Worker Barracks logic
         self.multiworld.get_region("Worker Barracks", self.player).connect(self.multiworld.get_region("Hospital Wing", self.player), None,

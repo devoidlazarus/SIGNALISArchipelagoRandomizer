@@ -17,9 +17,9 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "Photo of Ariane": (SignalisLocationClassification.key, "Penrose Wreck"),
     "Adhesive Tape (Penrose)": (SignalisLocationClassification.key, "Penrose Wreck"),
     "Broken Airlock Key": (SignalisLocationClassification.key, "Penrose Wreck"),
-    "The King in Yellow": (SignalisLocationClassification.lore, "Penrose Wreck"),
 
     # Installation AEON Locations
+    "The King in Yellow": (SignalisLocationClassification.lore, "Installation AEON"),
     "Receiptionist Key": (SignalisLocationClassification.key, "Installation AEON"),
     "Protektor Key": (SignalisLocationClassification.key, "Installation AEON"),
     "Pistol": (SignalisLocationClassification.weapon, "Installation AEON"),
