@@ -50,6 +50,8 @@ class SignalisWorld(World):
         # Penrose Wreck Logic
         self.multiworld.get_region("Penrose Wreck", self.player).connect(self.multiworld.get_region("Installation AEON", self.player), None,
             lambda state: state.has_all(["Adhesive Tape", "Airlock Key (Broken)"], self.player))
+        set_rule(self.multiworld.get_location("Broken Airlock Key", self.player),
+            lambda state: state.has("Photograph (Ariane)", self.player))
         
         # Installation AEON Logic
         self.multiworld.get_region("Installation AEON", self.player).connect(self.multiworld.get_region("Worker Barracks", self.player), None,
@@ -112,7 +114,7 @@ class SignalisWorld(World):
             lambda state: state.has("West Wing Key", self.player))
         if self.options.ending_artifact.value:
             set_rule(self.multiworld.get_location("Key of Love", self.player),
-                lambda state: state.has("West Wing Key", self.player))
+                lambda state: state.has_all(["West Wing Key", "Radio Module"], self.player))
 
         # Hospital Wing logic
         self.multiworld.get_region("Hospital Wing", self.player).connect(self.multiworld.get_region("Protektor Levels", self.player), None,
