@@ -73,19 +73,21 @@ class SignalisWorld(World):
         self.multiworld.get_region("Worker Barracks", self.player).connect(self.multiworld.get_region("Hospital Wing", self.player), None,
             lambda state: state.has("Identification Key", self.player))
         set_rule(self.multiworld.get_location("East Wing Key", self.player),
-            lambda state: state.has("Service Hatch Key", self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Office)", self.player),
-            lambda state: state.has("Service Hatch Key", self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Disposable Stun Prod (Worker Barracks - Office)", self.player),
-            lambda state: state.has("Service Hatch Key", self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Worker Barracks - First Aid)", self.player),         
-            lambda state: state.has("Service Hatch Key", self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Plate of Eternity", self.player),
-            lambda state: state.has_all(["Service Hatch Key", "Broken Key, Top Half", "Broken Key, Bottom Half"], self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and 
+                            state.has_all(["Broken Key, Top Half", "Broken Key, Bottom Half"], self.player))
         set_rule(self.multiworld.get_location("Radio Module", self.player),
-            lambda state: state.has_all(["Service Hatch Key", "Broken Key, Top Half", "Broken Key, Bottom Half"], self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and 
+                            state.has_all(["Broken Key, Top Half", "Broken Key, Bottom Half"], self.player))
         set_rule(self.multiworld.get_location("Identification Key", self.player),
-            lambda state: state.has_all(["Service Hatch Key", "Radio Module"], self.player))
+            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and state.has("Radio Module", self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Worker Barracks - Protektor Bathroom)", self.player),
             lambda state: state.has("East Wing Key", self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Store Room)", self.player),
