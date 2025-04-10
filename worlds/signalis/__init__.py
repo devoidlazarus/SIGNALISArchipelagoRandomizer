@@ -89,11 +89,11 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("Identification Key", self.player),
             lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and state.has("Radio Module", self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Worker Barracks - Protektor Bathroom)", self.player),
-            lambda state: state.has("East Wing Key", self.player))
+            lambda state: state.has("East Wing Key", self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Store Room)", self.player),
-            lambda state: state.has("East Wing Key", self.player))
+            lambda state: state.has("East Wing Key", self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("Mensa Key", self.player),
-            lambda state: state.has("East Wing Key", self.player))
+            lambda state: state.has("East Wing Key", self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Mensa, Top of Room)", self.player),
             lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Mensa, Bottom of Room)", self.player),
