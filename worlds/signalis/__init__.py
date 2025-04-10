@@ -65,9 +65,9 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("Classroom Key (Installation AEON)", self.player),
             lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Installation AEON - Aula)", self.player),
-            lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
+            lambda state: state.has_all(["Protektor Key", "Receptionist Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Installation AEON - Aula)", self.player),
-            lambda state: state.has_all(["Aperture Card", "Receptionist Key"], self.player))
+            lambda state: state.has_all(["Protektor Key", "Receptionist Key"], self.player))
         
        # Worker Barracks logic
         self.multiworld.get_region("Worker Barracks", self.player).connect(self.multiworld.get_region("Hospital Wing", self.player), None,
@@ -157,6 +157,10 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("10mm Ammo (Hospital Wing - Surgery)", self.player),
             lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player)
                                         and state.has_any(["Pistol", "Shotgun", "Revolver", "Rifle", "Submachine Gun"], self.player))
+        set_rule(self.multiworld.get_location("10mm Socket", self.player),
+            lambda state: state.has("Examination Room Key", self.player))
+        set_rule(self.multiworld.get_location("Autoinjector (Hospital Wing - Exam Room)", self.player),
+            lambda state: state.has("Examination Room Key", self.player))
         
         # Protektor Levels logic
         self.multiworld.get_region("Protektor Levels", self.player).connect(self.multiworld.get_region("Mines", self.player), None,
@@ -275,7 +279,7 @@ class SignalisWorld(World):
         
         # Nowhere logic
         self.multiworld.get_region("Nowhere", self.player).connect(self.multiworld.get_region("Corrupted Installation AEON", self.player), None,
-            lambda state: state.has_all(["Plate of Balance", "Plate of Eternity", "Plate of Knowledge", "Plate of Love", "Plate of Sacrifice", 
+            lambda state: state.has_all(["Plate of Balance", "Plate of Eternity", "Plate of Knowledge", "Plate of Love", "Plate of Sacrifice", "Plate of Flesh", 
                                          "Radio Module"], self.player))
         set_rule(self.multiworld.get_location("Repair Spray (Nowhere - Barbwire Room #1)", self.player),
             lambda state: state.has("Flashlight Module", self.player))
