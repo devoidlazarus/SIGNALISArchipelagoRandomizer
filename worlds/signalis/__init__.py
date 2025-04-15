@@ -87,7 +87,7 @@ class SignalisWorld(World):
             lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and 
                             state.has_all(["Broken Key, Top Half", "Broken Key, Bottom Half"], self.player))
         set_rule(self.multiworld.get_location("Identification Key", self.player),
-            lambda state: state.has_any(["Service Hatch Key", "West Wing Key"], self.player) and state.has("Radio Module", self.player))
+            lambda state: state.has_all(["Radio Module", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Worker Barracks - Protektor Bathroom)", self.player),
             lambda state: state.has("East Wing Key", self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Store Room)", self.player),
@@ -123,9 +123,9 @@ class SignalisWorld(World):
             lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player)
                                         and state.has_any(["Pistol", "Shotgun", "Revolver", "Rifle", "Submachine Gun"], self.player))
         set_rule(self.multiworld.get_location("Eidetic Module", self.player),
-            lambda state: state.has("Radio Module", self.player))
+            lambda state: state.has_all(["Radio Module", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Incinerator Key", self.player),
-            lambda state: state.has("Radio Module", self.player))
+            lambda state: state.has_all(["Radio Module", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Gold Key", self.player),
             lambda state: state.has("Video Cassette", self.player))
         set_rule(self.multiworld.get_location("Disposable Stun Prod (Hospital Wing - Pump Room)", self.player),
@@ -154,9 +154,12 @@ class SignalisWorld(World):
             lambda state: state.has("Incinerator Room Key", self.player))
         set_rule(self.multiworld.get_location("Fire Key", self.player),
             lambda state: state.has("Incinerator Room Key", self.player))
-        set_rule(self.multiworld.get_location("10mm Ammo (Hospital Wing - Surgery)", self.player),
-            lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player)
-                                        and state.has_any(["Pistol", "Shotgun", "Revolver", "Rifle", "Submachine Gun"], self.player))
+        set_rule(self.multiworld.get_location("10mm Ammo (Hospital Wing - Surgery, East)", self.player),
+            lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player))
+        set_rule(self.multiworld.get_location("10mm Ammo (Hospital Wing - Surgery, West)", self.player),
+            lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player))
+        set_rule(self.multiworld.get_location("Shotgun Rounds (Hospital Wing - Surgery)", self.player),
+            lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Socket", self.player),
             lambda state: state.has("Examination Room Key", self.player))
         set_rule(self.multiworld.get_location("Autoinjector (Hospital Wing - Exam Room)", self.player),
@@ -253,7 +256,7 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("Postbox Key", self.player),
             lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse", "Radio Module", "Hummingbird Key"], self.player))
         set_rule(self.multiworld.get_location("Administrator's Key", self.player),
-            lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse", "Eagle Key"], self.player))
+            lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse", "Eagle Key", "Astrolabe"], self.player))
         set_rule(self.multiworld.get_location("Owl Key", self.player),
             lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Shutter Gate Handle"], self.player))
         set_rule(self.multiworld.get_location("Disposable Stun Prod (Protektor Levels - EULR Dorm)", self.player),
@@ -267,7 +270,7 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("10mm Ammo (Protektor Levels - Workshop)", self.player),
             lambda state: state.has_all(["Maintenance Key", "Workshop Key"], self.player))
         set_rule(self.multiworld.get_location("Library Key", self.player),
-            lambda state: state.has_all(["Maintenance Key", "Workshop Key"], self.player))
+            lambda state: state.has("Postbox Key", self.player))
         
         # Mines logic
         self.multiworld.get_region("Mines", self.player).connect(self.multiworld.get_region("Nowhere", self.player), None,
@@ -333,6 +336,9 @@ class SignalisWorld(World):
         # Corrupted Installation AEON logic
         self.multiworld.get_region("Corrupted Installation AEON", self.player).connect(self.multiworld.get_region("Rotfront", self.player), None,
             lambda state: state.has("Classroom Key", self.player, 2))
+        set_rule(self.multiworld.get_location("Classroom Key (Corrupted Installation AEON)", self.player),
+            lambda state: state.has("Aperture Card", self.player))
+        
         
         # Rotfront logic
         self.multiworld.get_region("Rotfront", self.player).connect(self.multiworld.get_region("End", self.player), None,

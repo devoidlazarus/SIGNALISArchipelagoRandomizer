@@ -84,7 +84,9 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "10mm Socket": (SignalisLocationClassification.key, "Hospital Wing"),
     "Thermite Flare (Hospital Wing - Incinerator Room)": (SignalisLocationClassification.ammo, "Hospital Wing"),
     "Fire Key": (SignalisLocationClassification.key, "Hospital Wing"),
-    "10mm Ammo (Hospital Wing - Surgery)": (SignalisLocationClassification.ammo, "Hospital Wing"),
+    "10mm Ammo (Hospital Wing - Surgery, East)": (SignalisLocationClassification.ammo, "Hospital Wing"),
+    "Shotgun Rounds (Hospital Wing - Surgery)": (SignalisLocationClassification.ammo, "Hospital Wing"),
+    "10mm Ammo (Hospital Wing - Surgery, West)": (SignalisLocationClassification.ammo, "Hospital Wing"),
 
     # Proktektor Levels Locations
     "Maintenance Key": (SignalisLocationClassification.key, "Protektor Levels"),
@@ -140,6 +142,7 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "12mm Ammo (Protektor Levels - Workshop)": (SignalisLocationClassification.ammo, "Protektor Levels"),
     "10mm Ammo (Protektor Levels - Workshop)": (SignalisLocationClassification.ammo, "Protektor Levels"),
     "Library Key": (SignalisLocationClassification.key, "Protektor Levels"),
+    "12mm Ammo (Protektor Levels - Service Hatch)": (SignalisLocationClassification.ammo, "Protektor Levels"),
 
     # Mines Locations
     "Nitro Express Ammo (Mineshaft - Wire Room)": (SignalisLocationClassification.ammo, "Mines"),
@@ -197,8 +200,8 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "Plate of Love": (SignalisLocationClassification.key, "Nowhere"),
 
     # Corrupted Installation AEON Locations
-    "Grenade Shells (Corrupted Installation Aeon - Classroom 4B)": (SignalisLocationClassification.ammo, "Corrupted Installation AEON"),
-    "Classroom Key (Corrupted Installation Aeon)": (SignalisLocationClassification.key, "Corrupted Installation AEON"),
+    "Grenade Shells (Corrupted Installation AEON - Classroom 4B)": (SignalisLocationClassification.ammo, "Corrupted Installation AEON"),
+    "Classroom Key (Corrupted Installation AEON)": (SignalisLocationClassification.key, "Corrupted Installation AEON"),
 
     # Rotfront Locations
     "Thermite Flare (Rotfront - Blockwart Bedroom)": (SignalisLocationClassification.ammo, "Rotfront"),
@@ -209,7 +212,7 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "Shotgun Rounds (Rotfront - Ruined Apartment)": (SignalisLocationClassification.ammo, "Rotfront"),
     "10mm Ammo (Rotfront - Dormitory)": (SignalisLocationClassification.ammo, "Rotfront"),
     "Repair Spray (Rotfront - Dormitory)": (SignalisLocationClassification.health, "Rotfront"),
-    "Repair Spray (Rotfront - Apartment North of Blue Hallway)": (SignalisLocationClassification.health, "Rotfront"),
+    "Repair Patch (Rotfront - Apartment North of Blue Hallway)": (SignalisLocationClassification.health, "Rotfront"),
     "12mm Ammo (Rotfront - Apartment North of Blue Hallway)": (SignalisLocationClassification.ammo, "Rotfront"),
     "Handwheel": (SignalisLocationClassification.key, "Rotfront"),
     "Nitro Express Ammo (Rotfront - Apartment North of Blue Hallway)": (SignalisLocationClassification.ammo, "Rotfront"),
