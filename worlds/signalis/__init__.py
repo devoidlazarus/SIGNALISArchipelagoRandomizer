@@ -250,7 +250,9 @@ class SignalisWorld(World):
             lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse"], self.player))
         set_rule(self.multiworld.get_location("12mm Ammo (Protektor Levels - STCR Dorm, 8th Floor)", self.player),
             lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse"], self.player))
-        set_rule(self.multiworld.get_location("12mm Ammo (Protektor Levels - Service Hatch)", self.player),
+        set_rule(self.multiworld.get_location("12mm Ammo (Protektor Levels - Service Tunnel)", self.player),
+            lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse"], self.player))
+        set_rule(self.multiworld.get_location("Repair Spray (Protektor Levels - Service Tunnel)", self.player),
             lambda state: state.has_all(["Maintenance Key", "Flashlight Module", "Fuse"], self.player))
         if self.options.ending_artifact.value:
             set_rule(self.multiworld.get_location("Key of Eternity", self.player),

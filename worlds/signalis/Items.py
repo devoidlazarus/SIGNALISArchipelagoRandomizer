@@ -101,7 +101,7 @@ item_dict: Dict[str, Tuple[ItemClassification, SignalisItemClassification, int]]
     "Shotgun Rounds": (ItemClassification.filler, SignalisItemClassification.ammo, 16),
     "Autoinjector": (ItemClassification.filler, SignalisItemClassification.health, 8),
     "Thermite Flare": (ItemClassification.filler, SignalisItemClassification.ammo, 5),
-    "Repair Spray": (ItemClassification.filler, SignalisItemClassification.health, 20),
+    "Repair Spray": (ItemClassification.filler, SignalisItemClassification.health, 21),
     "12mm Ammo": (ItemClassification.filler, SignalisItemClassification.ammo, 13),
     "Nitro Express Ammo": (ItemClassification.filler, SignalisItemClassification.ammo, 5),
     "8mm Ammo": (ItemClassification.filler, SignalisItemClassification.ammo, 4),

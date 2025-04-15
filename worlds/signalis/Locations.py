@@ -143,7 +143,8 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "12mm Ammo (Protektor Levels - Workshop)": (SignalisLocationClassification.ammo, "Protektor Levels"),
     "10mm Ammo (Protektor Levels - Workshop)": (SignalisLocationClassification.ammo, "Protektor Levels"),
     "Library Key": (SignalisLocationClassification.key, "Protektor Levels"),
-    "12mm Ammo (Protektor Levels - Service Hatch)": (SignalisLocationClassification.ammo, "Protektor Levels"),
+    "12mm Ammo (Protektor Levels - Service Tunnel)": (SignalisLocationClassification.ammo, "Protektor Levels"),
+    "Repair Spray (Protektor Levels - Service Tunnel)": (SignalisLocationClassification.health, "Protektor Levels"),
 
     # Mines Locations
     "Nitro Express Ammo (Mineshaft - Wire Room)": (SignalisLocationClassification.ammo, "Mines"),
