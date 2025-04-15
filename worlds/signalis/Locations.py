@@ -87,6 +87,7 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "10mm Ammo (Hospital Wing - Surgery, East)": (SignalisLocationClassification.ammo, "Hospital Wing"),
     "Shotgun Rounds (Hospital Wing - Surgery)": (SignalisLocationClassification.ammo, "Hospital Wing"),
     "10mm Ammo (Hospital Wing - Surgery, West)": (SignalisLocationClassification.ammo, "Hospital Wing"),
+    "Repair Patch (Hospital Wing - Surgery)": (SignalisLocationClassification.ammo, "Hospital Wing"),
 
     # Proktektor Levels Locations
     "Maintenance Key": (SignalisLocationClassification.key, "Protektor Levels"),

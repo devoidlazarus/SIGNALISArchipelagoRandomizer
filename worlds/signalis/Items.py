@@ -94,7 +94,7 @@ item_dict: Dict[str, Tuple[ItemClassification, SignalisItemClassification, int]]
     "Pistol": (ItemClassification.progression, SignalisItemClassification.weapon, 1),
     "Shotgun": (ItemClassification.useful, SignalisItemClassification.weapon, 1),
     "Submachine Gun": (ItemClassification.useful, SignalisItemClassification.weapon, 1),
-    "Repair Patch": (ItemClassification.filler, SignalisItemClassification.health, 17),
+    "Repair Patch": (ItemClassification.filler, SignalisItemClassification.health, 18),
     "10mm Ammo": (ItemClassification.filler, SignalisItemClassification.ammo, 24),
     "Disposable Stun Prod": (ItemClassification.filler, SignalisItemClassification.ammo, 13),
     "Repair Spray+": (ItemClassification.filler, SignalisItemClassification.health, 5),
