@@ -1,7 +1,7 @@
 # SIGNALIS Archipelago Randomizer
 A randomizer mod for the game [SIGNALIS](https://store.steampowered.com/app/1262350/SIGNALIS/) by rose-engine, to use with the [Archipelago randomizer](https://archipelago.gg/).
 
-Installation instructions for this mod can be found here: 
+Setup instructions for this mod can be found here: [installation_instructions.md](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/blob/main/installation_instructions.md)
 
 Archipelago setup guides can be found here: https://archipelago.gg/tutorial/
 
