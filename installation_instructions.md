@@ -6,7 +6,7 @@
  - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases) version 0.5.0 or higher
 	 - Please consult the [Archipelago Setup Guide](https://archipelago.gg/tutorial/) for instructions on how to install Archipelago
  - [MelonLoader](https://github.com/LavaGang/MelonLoader) version 0.5.7
- - The latest `ArchipelagoSignalis.dll`, `Archipelago.MultiClient.Net.dll`, `Signalis.yaml`, and `signalis.apworld` files from the [Releases page](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/releases)
+ - The latest `ArchipelagoSignalis.zip`, `Signalis.yaml`, and `signalis.apworld` files from the [Releases page](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/releases)
 
 
 ### Mod installation steps
