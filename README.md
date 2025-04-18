@@ -32,6 +32,7 @@ All questions should be directed to me (dantean) or nster98 in the SIGNALIS thre
 ## Credits
  - nster98 for programming the majority of the client-side mod
  - Ryguy9999 and Mr. L for logic programming assistance
+ - AllyDJ for the initial idea and assistance with logic
  - The Archipelago team for creating the Archipelago randomizer
  - rose-engine for creating the wonderful game that is SIGNALIS
 
