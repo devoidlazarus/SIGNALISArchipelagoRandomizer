@@ -1,6 +1,6 @@
 name: Feature Request
 description: Request a feature
-title: "Category: "
+title: "Feature Request: "
 labels:
   - enhancement
 body:
