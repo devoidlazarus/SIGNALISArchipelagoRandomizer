@@ -121,7 +121,7 @@ class SignalisWorld(World):
         # Hospital Wing logic
         self.multiworld.get_region("Hospital Wing", self.player).connect(self.multiworld.get_region("Protektor Levels", self.player), None,
             lambda state: state.has_all(["Air Key", "Fire Key", "Gold Key", "Water Key", "Blank Key"], self.player)
-                                        and state.has_any(["Pistol", "Shotgun", "Revolver", "Rifle", "Submachine Gun"], self.player))
+                                        and state.has_any(["Pistol", "Shotgun", "Revolver", "Rifle", "Submachine Gun", "Thermite Flare"], self.player))
         set_rule(self.multiworld.get_location("Eidetic Module", self.player),
             lambda state: state.has_all(["Radio Module", "West Wing Key"], self.player))
         set_rule(self.multiworld.get_location("Incinerator Key", self.player),
