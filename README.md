@@ -1,3 +1,4 @@
+![SIGNALIS for Archipelago banner](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/blob/main/Signalis%20AP%20Banner.png)
 # SIGNALIS Archipelago Randomizer
 A randomizer mod for the game [SIGNALIS](https://store.steampowered.com/app/1262350/SIGNALIS/) by rose-engine, to use with the [Archipelago randomizer](https://archipelago.gg/).
 
