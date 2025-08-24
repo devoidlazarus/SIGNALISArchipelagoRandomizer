@@ -6,7 +6,7 @@
  - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases) version 0.5.0 or higher
 	 - Please consult the [Archipelago Setup Guide](https://archipelago.gg/tutorial/) for instructions on how to install Archipelago
  - [MelonLoader](https://github.com/LavaGang/MelonLoader) version 0.5.7
- - The latest `ArchipelagoSignalis.dll`, `Archipelago.MultiClient.Net.dll`, `Signalis.yaml`, and `signalis.apworld` files from the [Releases page](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/releases)
+ - The latest `ArchipelagoSignalis.zip`, `Signalis.yaml`, and `signalis.apworld` files from the [Releases page](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/releases)
 
 
 ### Mod installation steps
@@ -15,17 +15,18 @@
 3. When prompted for a game executable during MelonLoader installation, locate your `signalis.exe` file
    - Default location for a Steam installation of SIGNALIS is `C:\Program Files (x86)\Steam\steamapps\common\SIGNALIS`
 4. After MelonLoader is finished installing, open SIGNALIS again to let MelonLoader setup the required mod support files. You can close the game again after it loads into the main menu
-5. Copy the `ArchipelagoSignalis.dll` and `Archipelago.MultiClient.Net.dll` files you downloaded and paste them into the newly-created `Mods` folder located in your SIGNALIS installation directory
-6. Launch SIGNALIS
-7. Open the Settings menu and select Enter Archipelago Connection
-8. Enter your Archipelago slot name, server, and port information
+5. Unzip the `ArchipelagoSignalis.zip` file
+6. In the `ArchipelagoSignalis` folder you just unzipped, copy the `ArchipelagoSignalis.dll` and `Archipelago.MultiClient.Net.dll` files you downloaded and paste them into the newly-created `Mods` folder located in your SIGNALIS installation directory
+7. Launch SIGNALIS
+8. Open the Settings menu and select Enter Archipelago Connection
+9. Enter your Archipelago slot name, server, and port information
    - It is a known issue at the moment that you cannot see the cursor when entering your Archipelago connection settings. Please use the `Tab` key to select different fields of the form
-9. Select Done
+10. Select Done
    - If you cannot locate your cursor to select Done, hold down `Alt` and press `Tab` to exit the game window momentarily, line up your visible cursor with where the Done button would be, press `Tab` until the SIGNALIS window is selected, and then release `Alt`
-10. Exit the Settings menu
-11. Select Continue
+11. Exit the Settings menu
+12. Select Continue
     - If you have no existing save files, skip to step 15
-12. Select Begin Anew
+13. Select Begin Anew
 
 Any time you launch SIGNALIS to play an existing randomized save file, repeat steps #9-15 to successfully load into your save and connect to Archipelago.
 

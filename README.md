@@ -1,3 +1,4 @@
+![SIGNALIS for Archipelago banner](https://github.com/devoidlazarus/SIGNALISArchipelagoRandomizer/blob/main/Signalis%20AP%20Banner.png)
 # SIGNALIS Archipelago Randomizer
 A randomizer mod for the game [SIGNALIS](https://store.steampowered.com/app/1262350/SIGNALIS/) by rose-engine, to use with the [Archipelago randomizer](https://archipelago.gg/).
 
@@ -26,12 +27,14 @@ Given the nature of this mod and how it fundamentally breaks the linearity of a 
  - All "meat walls" in Rotfront, which are normally picked up by obtaining certain tarot card items, are completely disabled.
  - Your storage box can be accessed at any time by pressing F11.
  - You can access any previously-entered level via a selection menu by pressing F8.
+ - All ammo pickups during the Mynah boss fight are infinite to prevent softlocks in case you have not been sent enough ammo to beat her.
 
 ## Support
 All questions should be directed to me (dantean) or nster98 in the SIGNALIS thread in the [Archipelago Discord server](https://discord.gg/vENVZGsbpM).
 ## Credits
  - nster98 for programming the majority of the client-side mod
  - Ryguy9999 and Mr. L for logic programming assistance
+ - AllyDJ for the initial idea and assistance with logic
  - The Archipelago team for creating the Archipelago randomizer
  - rose-engine for creating the wonderful game that is SIGNALIS
 

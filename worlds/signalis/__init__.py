@@ -95,17 +95,17 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("Mensa Key", self.player),
             lambda state: state.has("East Wing Key", self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Mensa, Top of Room)", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Mensa, Bottom of Room)", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("Repair Patch (Worker Barracks - Mensa)", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("West Wing Key", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("Disposable Stun Prod (Worker Barracks - Rationing Office)", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("Broken Key, Top Half", self.player),
-            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player))
+            lambda state: state.has_all(["Mensa Key", "East Wing Key"], self.player) and state.has_any(["West Wing Key", "Service Hatch Key"], self.player))
         set_rule(self.multiworld.get_location("10mm Ammo (Worker Barracks - Lockers)", self.player),
             lambda state: state.has("West Wing Key", self.player))
         set_rule(self.multiworld.get_location("Broken Key, Bottom Half", self.player),
