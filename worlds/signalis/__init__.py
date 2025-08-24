@@ -276,7 +276,7 @@ class SignalisWorld(World):
         set_rule(self.multiworld.get_location("10mm Ammo (Protektor Levels - Workshop)", self.player),
             lambda state: state.has_all(["Maintenance Key", "Workshop Key"], self.player))
         set_rule(self.multiworld.get_location("Library Key", self.player),
-            lambda state: state.has("Postbox Key", self.player))
+            lambda state: state.has_all(["Maintenance Key", "Postbox Key"], self.player))
         
         # Mines logic
         self.multiworld.get_region("Mines", self.player).connect(self.multiworld.get_region("Nowhere", self.player), None,
