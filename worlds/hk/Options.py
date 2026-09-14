@@ -450,7 +450,7 @@ class GrubHuntGoal(NamedRange):
     display_name = "Grub Hunt Goal"
     range_start = 1
     range_end = 46
-    special_range_names = {"all": -1}
+    special_range_names = {"all": -1, "forty_six": 46}
     default = 46
 
 
@@ -556,7 +556,7 @@ for term, cost in cost_terms.items():
         ),
         "default": cost.weight
     }
-    if cost == 'GEO':
+    if term == 'GEO':
         extra_data["__doc__"] += " Geo costs will never be chosen for Grubfather, Seer, or Egg Shop."
 
     option = type(option_name, (Range,), extra_data)

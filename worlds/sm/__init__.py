@@ -15,7 +15,7 @@ from worlds.generic.Rules import add_rule, set_rule
 
 logger = logging.getLogger("Super Metroid")
 
-from .Options import SMOptions
+from .Options import SMOptions, sm_option_groups
 from .Client import SMSNIClient
 from .Rom import SM_ROM_MAX_PLAYERID, SM_ROM_PLAYERDATA_COUNT, SMProcedurePatch, get_sm_symbols
 import Utils
@@ -78,6 +78,7 @@ class SMWeb(WebWorld):
         "multiworld/en",
         ["Farrak Kilhn"]
     )]
+    option_groups = sm_option_groups
 
 
 class ByteEdit(TypedDict):
@@ -115,16 +116,16 @@ class SMWorld(World):
 
     Logic.factory('vanilla')
 
-    def __init__(self, world: MultiWorld, player: int):
+    def __init__(self, multiworld: MultiWorld, player: int):
         self.rom_name_available_event = threading.Event()
         self.locations = {}
-        super().__init__(world, player)
+        super().__init__(multiworld, player)
 
     def generate_early(self):
         Logic.factory('vanilla')
 
         dummy_rom_file = Utils.user_path(SMSettings.RomFile.copy_to)  # actual rom set in generate_output
-        self.variaRando = VariaRandomizer(self.options, dummy_rom_file, self.player)
+        self.variaRando = VariaRandomizer(self.options, dummy_rom_file, self.player, self.multiworld.seed, self.random)
         self.multiworld.state.smbm[self.player] = SMBoolManager(self.player, self.variaRando.maxDifficulty)
 
         # keeps Nothing items local so no player will ever pickup Nothing
@@ -232,8 +233,8 @@ class SMWorld(World):
                 for key, value1 in accessPoint.intraTransitions.items():
                     set_entrance_rule(self.multiworld.get_entrance(accessPoint.Name + "->" + key, self.player), self.player, value1)
 
-    def create_region(self, world: MultiWorld, player: int, name: str, locations=None, exits=None):
-        ret = Region(name, player, world)
+    def create_region(self, multiworld: MultiWorld, player: int, name: str, locations=None, exits=None):
+        ret = Region(name, player, multiworld)
         if locations:
             for loc in locations:
                 location = self.locations[loc]
@@ -314,11 +315,11 @@ class SMWorld(World):
         raise KeyError(f"Item {name} for {self.player_name} is invalid.")
 
     def get_filler_item_name(self) -> str:
-        if self.multiworld.random.randint(0, 100) < self.options.minor_qty.value:
+        if self.random.randint(0, 100) < self.options.minor_qty.value:
             power_bombs = self.options.power_bomb_qty.value
             missiles = self.options.missile_qty.value
             super_missiles = self.options.super_qty.value
-            roll = self.multiworld.random.randint(1, power_bombs + missiles + super_missiles)
+            roll = self.random.randint(1, power_bombs + missiles + super_missiles)
             if roll <= power_bombs:
                 return "Power Bomb"
             elif roll <= power_bombs + missiles:
@@ -340,8 +341,8 @@ class SMWorld(World):
                     else:
                         nonChozoLoc.append(loc)
 
-            self.multiworld.random.shuffle(nonChozoLoc)
-            self.multiworld.random.shuffle(chozoLoc)
+            self.random.shuffle(nonChozoLoc)
+            self.random.shuffle(chozoLoc)
             missingCount = len(self.NothingPool) - len(nonChozoLoc)
             locations = nonChozoLoc
             if (missingCount > 0):
@@ -419,10 +420,10 @@ class SMWorld(World):
         self.variaRando.randoExec.postProcessItemLocs(self.itemLocs, self.variaRando.args.hideItems)
 
     @classmethod
-    def stage_post_fill(cls, world):
-        new_state = CollectionState(world)
+    def stage_post_fill(cls, multiworld):
+        new_state = CollectionState(multiworld)
         progitempool = []
-        for item in world.itempool:
+        for item in multiworld.itempool:
             if item.game == "Super Metroid" and item.advancement:
                 progitempool.append(item)
 
@@ -430,10 +431,10 @@ class SMWorld(World):
             new_state.collect(item, True)
 
         bossesLoc = ['Draygon', 'Kraid', 'Ridley', 'Phantoon', 'Mother Brain']
-        for player in world.get_game_players("Super Metroid"):
+        for player in multiworld.get_game_players("Super Metroid"):
             for bossLoc in bossesLoc:
-                if not world.get_location(bossLoc, player).can_reach(new_state):
-                    world.state.smbm[player].onlyBossLeft = True
+                if not multiworld.get_location(bossLoc, player).can_reach(new_state):
+                    multiworld.state.smbm[player].onlyBossLeft = True
                     break
 
     def getWordArray(self, w: int) -> List[int]:
@@ -852,7 +853,7 @@ class SMWorld(World):
     def fill_slot_data(self): 
         slot_data = {}
         if not self.multiworld.is_race:
-            slot_data = self.options.as_dict(*self.options_dataclass.type_hints)
+            slot_data = self.options.as_dict("start_location", "max_difficulty", "area_randomization", "doors_colors_rando", "boss_randomization")
             slot_data["Preset"] = { "Knows": {},
                                     "Settings": {"hardRooms": Settings.SettingsDict[self.player].hardRooms,
                                                  "bossesDifficulty": Settings.SettingsDict[self.player].bossesDifficulty,

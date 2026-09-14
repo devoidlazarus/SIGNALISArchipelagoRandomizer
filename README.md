@@ -31,8 +31,10 @@ Given the nature of this mod and how it fundamentally breaks the linearity of a 
 
 ## Support
 All questions should be directed to me (dantean) or nster98 in the SIGNALIS thread in the [Archipelago Discord server](https://discord.gg/vENVZGsbpM).
+
 ## Credits
  - nster98 for programming the majority of the client-side mod
+ - pl4gue for deathlink and connection menu fixes
  - Ryguy9999 and Mr. L for logic programming assistance
  - AllyDJ for the initial idea and assistance with logic
  - The Archipelago team for creating the Archipelago randomizer
