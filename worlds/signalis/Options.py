@@ -19,8 +19,14 @@ class DeathLink(Toggle):
     display_name = "Deathlink"
     default = 0
 
+class EarlyBK(Toggle):
+    """Randomize the items needed to get to the first Save Room?"""
+    display_name = "Early BK"
+    default = 0
+
 @dataclass
 class SignalisOptions(PerGameCommonOptions):
      ending_artifact: ArtifactEnding
      deathlink: DeathLink
+     early_bk: EarlyBK
     

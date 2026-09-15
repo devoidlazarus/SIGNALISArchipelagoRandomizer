@@ -15,7 +15,7 @@ class SignalisWorld(World):
     location_name_to_id = {location: id for id, location in enumerate(location_dict.keys(), base_id)}
     # print(item_name_to_id)
     options_dataclass = SignalisOptions
-    options: SignalisOptions
+    options: SignalisOptions # type: ignore
 
     def create_item(self, name: str) -> SignalisItem:
         return SignalisItem(name, item_dict[name][0], self.item_name_to_id[name], self.player)
@@ -37,10 +37,16 @@ class SignalisWorld(World):
             self.multiworld.regions.append(region_object)
     
     def create_items(self) -> None:
+        placedPenroseAdhesive = False
         for item_key, item_value in item_dict.items():
             for _ in range(item_value[2]):
                 if not self.options.ending_artifact.value and (item_key == "Key of Love" or item_key == "Key of Eternity" or item_key == "Key of Sacrifice"):
                     pass
+                if not self.options.early_bk.value and item_key == "Airlock Key (Broken)":
+                    self.get_location("Broken Airlock Key").place_locked_item(self.create_item(item_key))
+                if not self.options.early_bk.value and item_key == "Adhesive Tape" and not placedPenroseAdhesive:
+                    self.get_location("Adhesive Tape (Penrose)").place_locked_item(self.create_item(item_key))
+                    placedPenroseAdhesive = True
                 else: 
                     self.multiworld.itempool.append(self.create_item(item_key))
     

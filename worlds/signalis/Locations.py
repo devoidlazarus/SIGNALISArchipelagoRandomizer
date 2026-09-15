@@ -162,7 +162,6 @@ location_dict: Dict[str, Tuple[SignalisLocationClassification, str]] = {
     "Repair Spray (Nowhere - Morgue)": (SignalisLocationClassification.health, "Nowhere"),
     "Autoinjector (Nowhere - Altar)": (SignalisLocationClassification.health, "Nowhere"),
     "10mm Ammo (Nowhere - Operating Room)": (SignalisLocationClassification.ammo, "Nowhere"),
-    "12mm Ammo (Nowhere - Operating Room)": (SignalisLocationClassification.ammo, "Nowhere"),
     "Disposable Stun Prod (Nowhere - Blood Tub Room)": (SignalisLocationClassification.ammo, "Nowhere"),
     "12mm Ammo (Nowhere - Blood Tub Room)": (SignalisLocationClassification.ammo, "Nowhere"),
     "Large Wooden Doll": (SignalisLocationClassification.key, "Nowhere"),
